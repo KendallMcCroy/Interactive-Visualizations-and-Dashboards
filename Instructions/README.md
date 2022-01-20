@@ -1,68 +1,84 @@
-# JavaScript Homework - JavaScript and DOM Manipulation
+# Plot.ly Homework - Belly Button Biodiversity
 
-## Background
+![Bacteria by filterforge.com](Images/bacteria.jpg)
 
-WAKE UP SHEEPLE! The extra-terrestrial menace has come to Earth and we here at `ALIENS-R-REAL` have collected all of the eye-witness reports we could to prove it! All we need to do now is put this information online for the world to see and then the matter will finally be put to rest.
+In this assignment, you will build an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels.
 
-There is just one tiny problem though ... our collection is too large to search through manually. Even our most dedicated followers are complaining that they are having trouble locating specific reports in this mess.
+The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
 
-That's why we are hiring you. We need you to write code that will create a table dynamically based upon a [dataset we provide](StarterCode/static/js/data.js). We also need to allow our users to filter the table data for specific values. There's a catch though ... we only use pure JavaScript, HTML, and CSS, and D3.js on our web pages. They are the only coding languages which can be trusted.
+## Step 1: Plotly
 
-You can handle this, right? The planet Earth needs to know what we have found!
+1. Use the D3 library to read in `samples.json`.
 
-## Your Task
+2. Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
 
-### Before You Begin
+* Use `sample_values` as the values for the bar chart.
 
-1. Create a new repository for this project called `javascript-challenge`. **Do not add this homework to an existing repository**.
+* Use `otu_ids` as the labels for the bar chart.
 
-2. Clone the new repository to your computer.
+* Use `otu_labels` as the hovertext for the chart.
 
-3. Inside your local git repository, create a directory for the Javascript challenge. Use the folder names to correspond to the challenges: **UFO-level-1** and **UFO-level-2**.
+  ![bar Chart](Images/hw01.png)
 
-4. Add your **html** files to this folder as well as your static folder containing your javascript. This will be the main script to run for analysis.
+3. Create a bubble chart that displays each sample.
 
-5. Push the above changes to GitHub.
+* Use `otu_ids` for the x values.
 
-6. Ensure your repository has regular commits and a thorough README.md file
+* Use `sample_values` for the y values.
 
-### Level 1: Automatic Table and Date Search (Required)
+* Use `sample_values` for the marker size.
 
-* Create a basic HTML web page or use the [index.html](StarterCode/index.html) file provided (we recommend building your own custom page).
+* Use `otu_ids` for the marker colors.
 
-* Using the UFO dataset provided in the form of an array of JavaScript objects, write code that appends a table to your web page and then adds new rows of data for each UFO sighting.
+* Use `otu_labels` for the text values.
 
-  * Make sure you have a column for `date/time`, `city`, `state`, `country`, `shape`, and `comment` at the very least.
+![Bubble Chart](Images/bubble_chart.png)
 
-* Use a date form in your HTML document and write JavaScript code that will listen for events and search through the `date/time` column to find rows that match user input.
+4. Display the sample metadata, i.e., an individual's demographic information.
 
-### Level 2: Multiple Search Categories (Optional)
+5. Display each key-value pair from the metadata JSON object somewhere on the page.
 
-* Complete all of Level 1 criteria.
+![hw](Images/hw03.png)
 
-* Using multiple `input` tags and/or select dropdowns, write JavaScript code so the user can to set multiple filters and search for UFO sightings using the following criteria based on the table columns:
+6. Update all of the plots any time that a new sample is selected.
 
-  1. `date/time`
-  2. `city`
-  3. `state`
-  4. `country`
-  5. `shape`
+Additionally, you are welcome to create any layout that you would like for your dashboard. An example dashboard is shown below:
 
-- - -
+![hw](Images/hw02.png)
 
-### Dataset
+## Advanced Challenge Assignment (Optional)
 
-* [UFO Sightings Data](StarterCode/static/js/data.js)
+The following task is advanced and therefore optional.
 
-- - -
+* Adapt the Gauge Chart from <https://plot.ly/javascript/gauge-charts/> to plot the weekly washing frequency of the individual.
+
+* You will need to modify the example gauge code to account for values ranging from 0 through 9.
+
+* Update the chart whenever a new sample is selected.
+
+![Weekly Washing Frequency Gauge](Images/gauge.png)
+
+## Deployment
+
+* Deploy your app to a free static page hosting service, such as GitHub Pages. Submit the links to your deployment and your GitHub repo.
+
+* Ensure your repository has regular commits and a thorough README.md file
+
+## Hints
+
+* Use `console.log` inside of your JavaScript code to see what your data looks like at each step.
+
+* Refer to the [Plotly.js documentation](https://plot.ly/javascript/) when building the plots.
 
 ## Rubric
 
-[Unit 14 Rubric - JavaScript Homework - JavaScript and DOM Manipulation](https://docs.google.com/document/d/1KWNS-xCwYBONjvlrIz4zyGkcUu0mP2kpMQh6qj0hKf8/edit?usp=sharing)
+[Unit 15 Rubric - Plot.ly Homework - Belly Button Biodiversity](https://docs.google.com/document/d/14ZKfNF4ws6CxlUsrhI81Q3YD06h0QQ1PbZa6BMnr7w4/edit?usp=sharing)
 
 - - -
 
-**Good luck!**
+## References
+
+Hulcr, J. et al.(2012) _A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable_. Retrieved from: [http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/](http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/)
 
 - - -
 
