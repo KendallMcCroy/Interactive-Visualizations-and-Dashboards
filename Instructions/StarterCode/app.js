@@ -5,7 +5,10 @@ d3.json("samples.json").then((data) => {
   var samples = data.samples;
   var sampledata = samples.filter(sampleObject => sampleObject.id == sample)
   console.log(sampledata[0]);
+
   
+  // Bubble Chart
+
 var results = sampledata[0]
 var otu_id = results.otu_ids
 var otu_labels = results.otu_labels
@@ -15,19 +18,31 @@ var sample_values = results.sample_values
     x: otu_id,
     y: sample_values,
     mode:"markers",
-    height: 500,
-    color: "steelblue"
+    marker: {
+
+            color: otu_id,
+            size: sample_values
+
+    
+    }
+    // height: 500,
+    // color: "steelblue"
   }]
 
-  var bubblelayout= [{
-    margin:{t:0}
+  var bubblelayout= {
+    // margin:{t:0}
+    // xaxis: {title: "OTU ID"},
+    // yaxis: {title: 'Numger of Samples ollected'},
+    // title: '<b>Bubble Chart For Each Sample<b>',
+    // showlegend: false
 
 
 
-  }]
+  }
 
   Plotly.newPlot("bubble", bubblechart, bubblelayout)
 
+  
 });
 }
 
