@@ -25,15 +25,14 @@ var sample_values = results.sample_values
 
     
     }
-    // height: 500,
-    // color: "steelblue"
+
   }]
 
   var bubblelayout= {
     // margin:{t:0}
     // xaxis: {title: "OTU ID"},
     // yaxis: {title: 'Numger of Samples ollected'},
-    // title: '<b>Bubble Chart For Each Sample<b>',
+    title: '<b>Bubble Chart displaying sample values of OTU IDs<b>',
     // showlegend: false
 
 
