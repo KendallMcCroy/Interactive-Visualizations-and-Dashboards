@@ -21,7 +21,7 @@ var sample_values = results.sample_values
     x: otu_id,
     y: sample_values,
     mode:"markers",
-    marker: {
+      marker: {
 
             color: otu_id,
             size: sample_values
@@ -31,9 +31,11 @@ var sample_values = results.sample_values
   }]
 
   var bubblelayout= {
-    margin:{t:0 },
+    margin:{ t:0 },
     xaxis: {title: "OTU ID"},
     yaxis: {title: 'Samples Values'},
+    hovermode: "closest",
+    colorscale:"Electric",
     title: '<b>Bubble Chart displaying sample values of OTU IDs<b>',
     showlegend: false
 
@@ -56,8 +58,6 @@ var sample_values = results.sample_values
   
 
   var barChartlayout= {
-    // margin:{t:0}
-
     title: '<b>Top 10 OTUs found in selected Test Subject ID<b>',
     xaxis: { title: "Sample Value"},
     yaxis: { title: "OTU ID"},
@@ -68,25 +68,6 @@ var sample_values = results.sample_values
   Plotly.newPlot("bar", barChart, barChartlayout)
 });
 }
-
-
-//////////////////////////////////////////////////////////////////////////
-// Demographic INFO
-//////////////////////////////////////////////////////////////////////////
-
-// var sampledata = data.metadata.filter(sample => sampleObject.id === 940)[0];
-// console.log(sampledata);
-
-// var samples = data.samples;
-// var sampledata = samples.filter(sampleObject => sampleObject.id == sample)
-// console.log(sampledata[0]);
-
-
-
-
-
-
-
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -146,3 +127,13 @@ var sample_values = results.sample_values
 
 
 
+//////////////////////////////////////////////////////////////////////////
+// Demographic INFO
+//////////////////////////////////////////////////////////////////////////
+
+// var sampledata = data.metadata.filter(sample => sampleObject.id === 940)[0];
+// console.log(sampledata);
+
+// var samples = data.samples;
+// var sampledata = samples.filter(sampleObject => sampleObject.id == sample)
+// console.log(sampledata[0]);
