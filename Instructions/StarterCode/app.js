@@ -44,13 +44,13 @@ var sample_values = results.sample_values
   
   /////////////////////////////////////////////////////////////////////
   //barChart
-  // otu_lables = otu_lables.slice(0, 10).reverse();
+  otu_labels = otu_labels.slice(0, 10).reverse();
   ////////////////////////////////////////////////////////////////////
  
   var barChart = [{ 
     x: sample_values,
     y: otu_id.slice(0, 10).map(otuID => `OTU ${otuID}`).reverse(),
-    // text: otu_lables,
+    text: otu_labels,
     type: "bar",
     orientation: "h"
   }];
