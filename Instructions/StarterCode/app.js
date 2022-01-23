@@ -44,7 +44,7 @@ var sample_values = results.sample_values
   
   /////////////////////////////////////////////////////////////////////
   //barChart
-  otu_labels = otu_labels.slice(0, 10).reverse();
+  // otu_labels = otu_labels.slice(0, 10).reverse();
   ////////////////////////////////////////////////////////////////////
  
   var barChart = [{ 
@@ -97,6 +97,18 @@ var sample_values = results.sample_values
 
   
   init()
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// DEMOGRAPHIC INFO
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// demographic_data = data.metadata.filter(sample => sample.id === 940)[0];
+// console.log(demographic_data)
+
+// Object.entries(demographic_data).forEach(),
+//       ([key, value]) => d3.select("#sample-metadata")
+
 
   // chart = BarChart("samples.json", {
   //   x: d => d.letter,
