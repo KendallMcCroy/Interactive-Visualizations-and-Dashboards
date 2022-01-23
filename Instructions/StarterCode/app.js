@@ -31,7 +31,7 @@ var sample_values = results.sample_values
   }]
 
   var bubblelayout= {
-    // margin:{t:0}
+    margin:{t:0 },
     xaxis: {title: "OTU ID"},
     yaxis: {title: 'Samples Values'},
     title: '<b>Bubble Chart displaying sample values of OTU IDs<b>',
@@ -109,13 +109,13 @@ var sample_values = results.sample_values
 
   var firstsample = sampleNames[0]
     buildCharts(firstsample)
-    
+
     })
   }
 
   function optionChanged(secondsample) {
     buildCharts(secondsample);
-
+  
 
   }
   
