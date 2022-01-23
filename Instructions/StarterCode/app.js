@@ -8,14 +8,14 @@ d3.json("samples.json").then((data) => {
   console.log(sampledata[0]);
 
 
-  /////////////////////////////////////////////////////////////////////////////////////////
-  // Bubble Chart
-  ////////////////////////////////////////////////////////////////////////////////////////
-
 var results = sampledata[0]
 var otu_id = results.otu_ids
 var otu_labels = results.otu_labels
 var sample_values = results.sample_values
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Bubble Chart
+////////////////////////////////////////////////////////////////////////////////////////
 
   var bubblechart = [{ 
     x: otu_id,
@@ -26,7 +26,6 @@ var sample_values = results.sample_values
             color: otu_id,
             size: sample_values
 
-    
     }
 
   }]
@@ -44,18 +43,17 @@ var sample_values = results.sample_values
   
   /////////////////////////////////////////////////////////////////////
   //barChart
-  // otu_labels = otu_labels.slice(0, 10).reverse();
+  // var otu_labels = otu_labels.slice(0, 10).reverse();
   ////////////////////////////////////////////////////////////////////
  
   var barChart = [{ 
-    x: sample_values,
+    x: sample_values.slice(0,10).reverse(),
     y: otu_id.slice(0, 10).map(otuID => `OTU ${otuID}`).reverse(),
     text: otu_labels,
     type: "bar",
     orientation: "h"
   }];
   
-
 
   var barChartlayout= {
     // margin:{t:0}
@@ -70,6 +68,26 @@ var sample_values = results.sample_values
   Plotly.newPlot("bar", barChart, barChartlayout)
 });
 }
+
+
+//////////////////////////////////////////////////////////////////////////
+// Demographic INFO
+//////////////////////////////////////////////////////////////////////////
+
+// var sampledata = data.metadata.filter(sample => sampleObject.id === 940)[0];
+// console.log(sampledata);
+
+// var samples = data.samples;
+// var sampledata = samples.filter(sampleObject => sampleObject.id == sample)
+// console.log(sampledata[0]);
+
+
+
+
+
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////
 //Function init
@@ -93,8 +111,6 @@ var sample_values = results.sample_values
 
     })
   }
-
-
   
   init()
 
