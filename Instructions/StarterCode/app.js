@@ -43,7 +43,7 @@ var sample_values = results.sample_values
   Plotly.newPlot("bubble", bubblechart, bubblelayout)
   
   /////////////////////////////////////////////////////////////////////
-  //barchart
+  //barChart
   // otu_lables = otu_lables.slice(0, 10).reverse();
   ////////////////////////////////////////////////////////////////////
  
@@ -61,8 +61,11 @@ var sample_values = results.sample_values
     // margin:{t:0}
 
     title: '<b>Top 10 OTUs found in selected Test Subject ID<b>',
-    
-
+    xaxis: { title: "Sample Value"},
+    yaxis: { title: "OTU ID"},
+    autosize: false, 
+    width: 500,
+    height:600
   }
   Plotly.newPlot("bar", barChart, barChartlayout)
 });
