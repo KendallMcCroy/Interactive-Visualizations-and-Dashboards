@@ -1,3 +1,8 @@
+function buildMetaData(sample) {
+
+}
+
+
 function buildCharts(sample) {
   // Fetch the JSON data and console log it
 d3.json("samples.json").then((data) => {
@@ -31,11 +36,10 @@ var sample_values = results.sample_values
   }]
 
   var bubblelayout= {
-    margin:{ t:0 },
+    margin:{l: 100, r: 100, t: 100, b: 100},
     xaxis: {title: "OTU ID"},
     yaxis: {title: 'Samples Values'},
     hovermode: "closest",
-    colorscale:"Electric",
     title: '<b>Bubble Chart displaying sample values of OTU IDs<b>',
     showlegend: false
 
@@ -62,8 +66,7 @@ var sample_values = results.sample_values
     xaxis: { title: "Sample Value"},
     yaxis: { title: "OTU ID"},
     autosize: false, 
-    width: 500,
-    height:600
+    margin: {t:30}
   }
   Plotly.newPlot("bar", barChart, barChartlayout)
 });
@@ -88,14 +91,16 @@ var sample_values = results.sample_values
 
     })
 
-  var firstsample = sampleNames[0]
-    buildCharts(firstsample)
+  var firstsample = sampleNames[0];
+    buildCharts(firstsample);
+    buildMetaData(firstsample);
 
     })
   }
 
   function optionChanged(secondsample) {
     buildCharts(secondsample);
+    buildMetaData(secondsample);
   
 
   }
@@ -106,34 +111,3 @@ var sample_values = results.sample_values
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // DEMOGRAPHIC INFO
 //////////////////////////////////////////////////////////////////////////////////////////////
-
-// demographic_data = data.metadata.filter(sample => sample.id === 940)[0];
-// console.log(demographic_data)
-
-// Object.entries(demographic_data).forEach(),
-//       ([key, value]) => d3.select("#sample-metadata")
-
-
-  // chart = BarChart("samples.json", {
-  //   x: d => d.letter,
-  //   y: d => d.frequency,
-  //   xDomain: d3.groupSort(alphabet, ([d]) => -d.frequency, d => d.letter), // sort by descending frequency
-  //   yFormat: "%",
-  //   yLabel: "↑ Frequency",
-  //   width,
-  //   height: 500,
-  //   color: "steelblue"
-  // })
-
-
-
-//////////////////////////////////////////////////////////////////////////
-// Demographic INFO
-//////////////////////////////////////////////////////////////////////////
-
-// var sampledata = data.metadata.filter(sample => sampleObject.id === 940)[0];
-// console.log(sampledata);
-
-// var samples = data.samples;
-// var sampledata = samples.filter(sampleObject => sampleObject.id == sample)
-// console.log(sampledata[0]);
