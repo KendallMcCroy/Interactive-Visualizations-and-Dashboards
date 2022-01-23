@@ -17,30 +17,30 @@ var otu_id = results.otu_ids
 var otu_labels = results.otu_labels
 var sample_values = results.sample_values
 
-  // var bubblechart = [{ 
-  //   x: otu_id,
-  //   y: sample_values,
-  //   mode:"markers",
-  //   marker: {
+  var bubblechart = [{ 
+    x: otu_id,
+    y: sample_values,
+    mode:"markers",
+    marker: {
 
-  //           color: otu_id,
-  //           size: sample_values
+            color: otu_id,
+            size: sample_values
 
     
-  //   }
+    }
 
-  // }]
+  }]
 
-  // var bubblelayout= {
-  //   // margin:{t:0}
-  //   xaxis: {title: "OTU ID"},
-  //   yaxis: {title: 'Samples Values'},
-  //   title: '<b>Bubble Chart displaying sample values of OTU IDs<b>',
-  //   showlegend: false
+  var bubblelayout= {
+    // margin:{t:0}
+    xaxis: {title: "OTU ID"},
+    yaxis: {title: 'Samples Values'},
+    title: '<b>Bubble Chart displaying sample values of OTU IDs<b>',
+    showlegend: false
 
-  // }
+  }
 
-  // Plotly.newPlot("bubble", bubblechart, bubblelayout)
+  Plotly.newPlot("bubble", bubblechart, bubblelayout)
   
   /////////////////////////////////////////////////////////////////////
   //barchart
