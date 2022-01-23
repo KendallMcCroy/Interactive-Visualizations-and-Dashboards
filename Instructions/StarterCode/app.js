@@ -8,6 +8,17 @@ function buildMetaData(sample) {
     // Filter the data for the objest with the desired sample number
     var resultsArray = metadata.filter(sampleObject => sampleObject.id == sample);
     var results = resultsArray[0];
+
+    // Using D3 to select the panel with id of '#sample-metadata'
+    var PANEL = d3.select("#sample-metadata");
+
+    // Using '.html("") to clear any existing metadata
+    PANEL.html("")
+
+    // Using `Object.entries` to add each key and value pair to the panel
+    Object.entries(results).forEach(([key, value]) => {
+      PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
+    })
     
   });
 
